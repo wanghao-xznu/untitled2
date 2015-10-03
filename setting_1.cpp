@@ -1,0 +1,397 @@
+#include "setting_1.h"
+#include "ui_setting_1.h"
+#include "numkeyboard.h"
+#include "setting.h"
+#include <QFile>
+
+#include <QDebug>
+
+QString arr_setting[5][6];
+
+void Setting_1::load_cfg()
+{
+    QFile file("bilang.cfg");
+    if(!file.open(QIODevice::ReadWrite| QIODevice::Text)) {
+            qDebug()<<"Can't open the file!"<<endl;
+    }
+    for(int i=0;i<5;i++){
+        for(int j=0;j<6;j++){
+            QByteArray line = file.readLine();//每次都把换行符读了进来，烦人
+            //QByteArray line = file.read(10);
+            QString str(line);
+            str=str.left(str.length() - 1);
+            arr_setting[i][j]=str;
+            qDebug()<< str;
+        }
+    }
+    file.close();
+     ui->pushButton_2->setText(arr_setting[0][0]);
+     ui->pushButton_7->setText(arr_setting[0][1]);
+     ui->pushButton_8->setText(arr_setting[0][2]);
+     ui->pushButton_17->setText(arr_setting[0][3]);
+     ui->pushButton_18->setText(arr_setting[0][4]);
+     ui->pushButton_19->setText(arr_setting[0][5]);
+     ui->pushButton_3->setText(arr_setting[1][0]);
+     ui->pushButton_9->setText(arr_setting[1][1]);
+     ui->pushButton_10->setText(arr_setting[1][2]);
+     ui->pushButton_20->setText(arr_setting[1][3]);
+     ui->pushButton_24->setText(arr_setting[1][4]);
+     ui->pushButton_25->setText(arr_setting[1][5]);
+     ui->pushButton_4->setText(arr_setting[2][0]);
+     ui->pushButton_11->setText(arr_setting[2][1]);
+     ui->pushButton_12->setText(arr_setting[2][2]);
+     ui->pushButton_21->setText(arr_setting[2][3]);
+     ui->pushButton_26->setText(arr_setting[2][4]);
+     ui->pushButton_27->setText(arr_setting[2][5]);
+     ui->pushButton_5->setText(arr_setting[3][0]);
+     ui->pushButton_13->setText(arr_setting[3][1]);
+     ui->pushButton_14->setText(arr_setting[3][2]);
+     ui->pushButton_22->setText(arr_setting[3][3]);
+     ui->pushButton_28->setText(arr_setting[3][4]);
+     ui->pushButton_29->setText(arr_setting[3][5]);
+     ui->pushButton_6->setText(arr_setting[4][0]);
+     ui->pushButton_15->setText(arr_setting[4][1]);
+     ui->pushButton_16->setText(arr_setting[4][2]);
+     ui->pushButton_23->setText(arr_setting[4][3]);
+     ui->pushButton_30->setText(arr_setting[4][4]);
+     ui->pushButton_31->setText(arr_setting[4][5]);
+
+
+}
+
+Setting_1::Setting_1(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::Setting_1)
+{
+    ui->setupUi(this);//在这里应该装载文件cfg文件内容
+    load_cfg();
+    this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
+}
+
+Setting_1::~Setting_1()
+{
+    delete ui;
+}
+
+void Setting_1::on_pushButton_clicked()//back 保存按钮
+{
+    system("rm bilang.cfg");//文件名为 a.txt 可以用“C:/a.txt”之类
+    QFile file("bilang.cfg");
+    file.open(QIODevice::WriteOnly);
+    for(int i=0;i<5;i++){
+        for(int j=0;j<6;j++){
+        QTextStream txtOutput(&file);
+        QString n1(arr_setting[i][j]);
+        //n1=n1.toInt();
+        txtOutput << n1<<endl;
+        }
+    }
+    file.close();
+    this->close();
+    Setting setting;
+    setting.show();
+    setting.exec();
+}
+
+void Setting_1::on_pushButton_2_clicked()//1
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_2->setText(ret);
+    arr_setting[0][0]=ret;//下表弄错了，明天注意修改
+
+}
+
+
+void Setting_1::on_pushButton_7_clicked()//2
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_7->setText(ret);
+    arr_setting[0][1]=ret;
+
+}
+
+void Setting_1::on_pushButton_8_clicked()//3
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_8->setText(ret);
+    arr_setting[0][2]=ret;
+}
+
+void Setting_1::on_pushButton_17_clicked()//4
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_17->setText(ret);
+    arr_setting[0][3]=ret;
+}
+
+void Setting_1::on_pushButton_18_clicked()//5
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_18->setText(ret);
+    arr_setting[0][4]=ret;
+}
+
+void Setting_1::on_pushButton_19_clicked()//6
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_19->setText(ret);
+    arr_setting[0][5]=ret;
+}
+
+void Setting_1::on_pushButton_3_clicked()//7
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_3->setText(ret);
+    arr_setting[1][0]=ret;
+}
+
+void Setting_1::on_pushButton_9_clicked()//8
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_9->setText(ret);
+    arr_setting[1][1]=ret;
+}
+
+void Setting_1::on_pushButton_10_clicked()//9
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_10->setText(ret);
+    arr_setting[1][2]=ret;
+}
+
+void Setting_1::on_pushButton_20_clicked()//10
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_20->setText(ret);
+    arr_setting[1][3]=ret;
+}
+
+void Setting_1::on_pushButton_24_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_24->setText(ret);
+    arr_setting[1][4]=ret;
+}
+
+void Setting_1::on_pushButton_25_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_25->setText(ret);
+    arr_setting[1][5]=ret;
+}
+
+void Setting_1::on_pushButton_4_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_4->setText(ret);
+    arr_setting[2][0]=ret;
+}
+
+void Setting_1::on_pushButton_11_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_11->setText(ret);
+    arr_setting[2][1]=ret;
+}
+
+void Setting_1::on_pushButton_12_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_12->setText(ret);
+    arr_setting[2][2]=ret;
+}
+
+void Setting_1::on_pushButton_21_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_21->setText(ret);
+    arr_setting[2][3]=ret;
+}
+
+void Setting_1::on_pushButton_26_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_26->setText(ret);
+    arr_setting[2][4]=ret;
+}
+
+void Setting_1::on_pushButton_27_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_27->setText(ret);
+    arr_setting[2][5]=ret;
+}
+
+void Setting_1::on_pushButton_5_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_5->setText(ret);
+    arr_setting[3][0]=ret;
+}
+
+void Setting_1::on_pushButton_13_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_13->setText(ret);
+    arr_setting[3][1]=ret;
+}
+
+void Setting_1::on_pushButton_14_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_14->setText(ret);
+    arr_setting[3][2]=ret;
+}
+
+void Setting_1::on_pushButton_22_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_22->setText(ret);
+    arr_setting[3][3]=ret;
+}
+
+void Setting_1::on_pushButton_28_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_28->setText(ret);
+    arr_setting[3][4]=ret;
+}
+
+void Setting_1::on_pushButton_29_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_29->setText(ret);
+    arr_setting[3][5]=ret;
+}
+
+void Setting_1::on_pushButton_6_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_6->setText(ret);
+    arr_setting[4][0]=ret;
+}
+
+void Setting_1::on_pushButton_15_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_15->setText(ret);
+    arr_setting[4][1]=ret;
+}
+
+void Setting_1::on_pushButton_16_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_16->setText(ret);
+    arr_setting[4][2]=ret;
+}
+
+void Setting_1::on_pushButton_23_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_23->setText(ret);
+    arr_setting[4][3]=ret;
+}
+
+void Setting_1::on_pushButton_30_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_30->setText(ret);
+    arr_setting[4][4]=ret;
+}
+
+void Setting_1::on_pushButton_31_clicked()
+{
+    NumKeyBoard numkeyboard;
+    //numkeyboard.show();
+    //numkeyboard.exec();
+    ret=numkeyboard.returnValue();
+    ui->pushButton_31->setText(ret);
+    arr_setting[4][5]=ret;
+}
