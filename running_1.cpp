@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <QFile>
 #include <QDebug>
+#include "bilang.h"
 //###############
 #include <unistd.h>
 #include <stdlib.h>
@@ -15,6 +16,8 @@
 
 #include <termio.h>//serial add just now
 //###############
+
+Running_1 *g_running_1=NULL;
 
 int gobal=100;
 int temp11;
@@ -111,7 +114,7 @@ Running_1::Running_1(QWidget *parent) :
 
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
 
-    this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
+    this->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//去掉标题栏
 }
 int Running_1::open_serial()
 {
@@ -314,11 +317,21 @@ void Running_1::on_pushButton_4_clicked()//返回按钮
 {
     duanwei=1;
     timer->stop();
-    close_serial();
-    this->close();
-    Running running;
-    running.show();
-    running.exec();
+   //close_serial();
+    //this->close();
+    if(g_running==NULL)
+    {
+    g_running = new Running ;
+    g_running->show();
+    g_running->exec();
+    }
+    else
+    {
+        delete g_running;
+        g_running = new Running ;
+        g_running->show();
+        g_running->exec();
+    }
 }
 
 void Running_1::on_pushButton_clicked()//开始运行button

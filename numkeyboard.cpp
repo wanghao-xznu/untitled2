@@ -1,6 +1,7 @@
 #include "numkeyboard.h"
 #include "ui_numkeyboard.h"
 #include "ui_setting_11.h"
+#include "bilang.h"
 
 NumKeyBoard::NumKeyBoard(QWidget *parent) :
     QDialog(parent),
@@ -18,6 +19,7 @@ NumKeyBoard::NumKeyBoard(QWidget *parent) :
     QFont font = ui->lineEdit->font();
     font.setPointSize(font.pointSize() + 8);
     ui->lineEdit->setFont(font);
+    this->setWindowFlags(Qt::WindowStaysOnTopHint);//OnTopHint
 
 }
 

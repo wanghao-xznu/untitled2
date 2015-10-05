@@ -3,13 +3,17 @@
 #include "select.h"
 #include "setting.h"
 #include "running_1.h"
+#include "bilang.h"
+#include <QDebug>
+
+Running *g_running=NULL;
 
 Running::Running(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Running)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
+    this->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//去掉标题栏
 }
 
 Running::~Running()
@@ -19,24 +23,55 @@ Running::~Running()
 
 void Running::on_pushButton_6_clicked()//back
 {
-    this->close();
-    Select select;
-    select.show();
-    select.exec();
+    //this->close();
+    if(g_select==NULL)
+    {
+    g_select = new Select;
+    g_select->show();
+    g_select->exec();
+    }
+    else
+    {
+        delete g_select;
+        g_select = new Select;
+        g_select->show();
+        g_select->exec();
+
+    }
 }
 
 void Running::on_pushButton_7_clicked()//setting
 {
-    this->close();
-    Setting setting;
-    setting.show();
-    setting.exec();
+    //this->close();
+    if(g_setting==NULL)
+    {
+    g_setting = new Setting;
+    g_setting->show();
+    g_setting->exec();
+    }
+    else
+    {
+        delete g_setting;
+        g_setting = new Setting;
+        g_setting->show();
+        g_setting->exec();
+    }
 }
 
 void Running::on_pushButton_clicked()
 {
-    this->close();
-    Running_1 running_1;
-    running_1.show();
-    running_1.exec();
+    //this->close();
+    if(g_running_1==NULL)
+    {
+    g_running_1 = new Running_1;
+    g_running_1->show();
+    g_running_1->exec();
+    }
+    else
+    {
+        delete g_running_1;
+        g_running_1 = new Running_1;
+        g_running_1->show();
+        g_running_1->exec();
+    }
 }

@@ -5,6 +5,9 @@
 #include <QFile>
 
 #include <QDebug>
+#include "bilang.h"
+
+Setting_1 *g_setting_1=NULL;
 
 QString arr_setting[5][6];
 
@@ -65,7 +68,7 @@ Setting_1::Setting_1(QWidget *parent) :
 {
     ui->setupUi(this);//在这里应该装载文件cfg文件内容
     load_cfg();
-    this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
+    this->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//去掉标题栏
 }
 
 Setting_1::~Setting_1()
@@ -87,10 +90,21 @@ void Setting_1::on_pushButton_clicked()//back 保存按钮
         }
     }
     file.close();
-    this->close();
-    Setting setting;
-    setting.show();
-    setting.exec();
+    //this->close();
+    if(g_setting==NULL)
+    {
+    g_setting = new Setting;
+    g_setting->show();
+    g_setting->exec();
+    }
+    else
+    {
+        delete g_setting;
+        g_setting = new Setting;
+        g_setting->show();
+        g_setting->exec();
+
+    }
 }
 
 void Setting_1::on_pushButton_2_clicked()//1

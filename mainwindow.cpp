@@ -2,6 +2,10 @@
 #include "ui_mainwindow.h"
 #include "select.h"
 
+#include "bilang.h"
+MainWindow *g_mianwindow=NULL;
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),//QMainWindow
     ui(new Ui::MainWindow)
@@ -17,11 +21,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    this->close();
-    Select select;
-    select.show();
-    //this->close();
-    select.exec();
-    //this->close();
+    //this->deleteLater(); if not NULL DELETE
+    if(g_select==NULL)
+    {
+        //this->hide();
+        g_select = new Select;
+        g_select->show();
+        g_select->exec();
+    }
+    else
+    {
+        g_select->hide();
+        g_select->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);
+        g_select->show();
+    }
 
 }

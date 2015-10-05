@@ -29,7 +29,8 @@ HEADERS  += mainwindow.h \
     running_1.h \
     numkeyboard.h \
     setting_11.h \
-    setting_1.h
+    setting_1.h \
+    bilang.h
 
 FORMS    += mainwindow.ui \
     select.ui \
