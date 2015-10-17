@@ -165,25 +165,30 @@ void get_current_temp_and_power(char)
                   //begin count
                   receive_count=0;
               }
-              if(receive_count<5){
+              if(receive_count<7){
                    temper_and_power[receive_count]=c;
                    receive_count++;
               }
-              if(receive_count==5){
+              if(receive_count==7){
                   receive_count=10;
                   current_power[0]=temper_and_power[1];
                    current_power[1]=temper_and_power[2];
-                    current_power[2]='\0';
-                     current_temperature[0]=temper_and_power[3];
-                     current_temperature[1]=temper_and_power[4];
-                     current_temperature[2]='\0';
+                   current_power[2]=temper_and_power[3];
+                    current_power[3]='\0';
+                    QString temp_power = current_power;
+                     current_temperature[0]=temper_and_power[4];
+                     current_temperature[1]=temper_and_power[5];
+                     current_temperature[2]=temper_and_power[6];
+                     current_temperature[3]='\0';
+                     QString temp_temperature = current_temperature;
                      //qDebug()<<current_power;
-                     ui->lcdNumber_9->display(current_power);
+
+                     //ui->lcdNumber_9->display(current_power);
+                     ui->lcdNumber_9->display(temp_power.toInt());
                      //qDebug()<<current_temperature;
-                     ui->lcdNumber_8->display(current_temperature);
-                  //temper_and_power[1]+temper_and_power[2];
-                  //qDebug()<<temper_and_power;
-                  //QMessageBox::warning(this, tr("Error"), tr("Receive error!"));//only tgest warning
+                     //ui->lcdNumber_8->display(current_temperature);
+                     ui->lcdNumber_8->display(temp_temperature.toInt());
+
               }
 
  }
@@ -317,6 +322,7 @@ void Running_1::on_pushButton_4_clicked()//返回按钮
 {
     duanwei=1;
     timer->stop();
+    send_serial("STP");
    //close_serial();
     //this->close();
     if(g_running==NULL)
@@ -344,23 +350,151 @@ void Running_1::on_pushButton_clicked()//开始运行button
            case 1:
            //send arr_setting[0][0] arr_setting[0][3]
                qDebug()<<"START:Temperature"+arr_setting[0][0]+"Power"+arr_setting[0][3];
-               send_serial("START:Temperature"+arr_setting[0][0]+"Power"+arr_setting[0][3]);
+               //send_serial("START:Temperature"+arr_setting[0][0]+"Power"+arr_setting[0][3]);
+               send_serial("STA");
+               if(arr_setting[0][0].length()==3){
+                   send_serial(arr_setting[0][0]);
+               }
+               else if(arr_setting[0][0].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[0][0]);
+               }
+               else if(arr_setting[0][0].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[0][0]);
+               }
+
+
+               if(arr_setting[0][3].length()==3){
+                   send_serial(arr_setting[0][3]);
+               }
+               else if(arr_setting[0][3].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[0][3]);
+               }
+               else if(arr_setting[0][3].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[0][3]);
+               }
+
+
+               //send_serial("STA"+arr_setting[0][0]+arr_setting[0][3]);
                break;
            case 2:
                qDebug()<<"START:Temperature"+arr_setting[1][0]+"Power"+arr_setting[1][3];
-               send_serial("START:Temperature"+arr_setting[1][0]+"Power"+arr_setting[1][3]);
+               //send_serial("START:Temperature"+arr_setting[1][0]+"Power"+arr_setting[1][3]);
+               send_serial("STA");
+               if(arr_setting[1][0].length()==3){
+                   send_serial(arr_setting[1][0]);
+               }
+               else if(arr_setting[1][0].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[1][0]);
+               }
+               else if(arr_setting[1][0].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[1][0]);
+               }
+
+
+               if(arr_setting[1][3].length()==3){
+                   send_serial(arr_setting[1][3]);
+               }
+               else if(arr_setting[1][3].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[1][3]);
+               }
+               else if(arr_setting[1][3].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[1][3]);
+               }
                break;
            case 3:
                qDebug()<<"START:Temperature"+arr_setting[2][0]+"Power"+arr_setting[2][3];
-               send_serial("START:Temperature"+arr_setting[2][0]+"Power"+arr_setting[2][3]);
+               //send_serial("START:Temperature"+arr_setting[2][0]+"Power"+arr_setting[2][3]);
+               send_serial("STA");
+               if(arr_setting[2][0].length()==3){
+                   send_serial(arr_setting[2][0]);
+               }
+               else if(arr_setting[2][0].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[2][0]);
+               }
+               else if(arr_setting[2][0].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[2][0]);
+               }
+
+
+               if(arr_setting[2][3].length()==3){
+                   send_serial(arr_setting[2][3]);
+               }
+               else if(arr_setting[2][3].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[2][3]);
+               }
+               else if(arr_setting[2][3].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[2][3]);
+               }
                break;
            case 4:
                qDebug()<<"START:Temperature"+arr_setting[3][0]+"Power"+arr_setting[3][3];
-               send_serial("START:Temperature"+arr_setting[3][0]+"Power"+arr_setting[3][3]);
+               //send_serial("START:Temperature"+arr_setting[3][0]+"Power"+arr_setting[3][3]);
+               send_serial("STA");
+               if(arr_setting[3][0].length()==3){
+                   send_serial(arr_setting[3][0]);
+               }
+               else if(arr_setting[3][0].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[3][0]);
+               }
+               else if(arr_setting[3][0].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[3][0]);
+               }
+
+
+               if(arr_setting[3][3].length()==3){
+                   send_serial(arr_setting[3][3]);
+               }
+               else if(arr_setting[3][3].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[3][3]);
+               }
+               else if(arr_setting[3][3].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[3][3]);
+               }
                break;
            case 5:
                qDebug()<<"START:Temperature"+arr_setting[4][0]+"Power"+arr_setting[4][3];
-               send_serial("START:Temperature"+arr_setting[4][0]+"Power"+arr_setting[4][3]);
+               //send_serial("START:Temperature"+arr_setting[4][0]+"Power"+arr_setting[4][3]);
+               send_serial("STA");
+               if(arr_setting[4][0].length()==3){
+                   send_serial(arr_setting[4][0]);
+               }
+               else if(arr_setting[4][0].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[4][0]);
+               }
+               else if(arr_setting[4][0].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[4][0]);
+               }
+
+
+               if(arr_setting[4][3].length()==3){
+                   send_serial(arr_setting[4][3]);
+               }
+               else if(arr_setting[4][3].length()==2){
+                   send_serial("0");
+                   send_serial(arr_setting[4][3]);
+               }
+               else if(arr_setting[4][3].length()==1){
+                   send_serial("00");
+                   send_serial(arr_setting[4][3]);
+               }
                break;
            default:
                break;
@@ -371,6 +505,7 @@ void Running_1::on_pushButton_2_clicked()//暂停运行button
 {
     //停止定时器
     timer->stop();
+    send_serial("STP");
     qDebug()<<"PAUSE";
 }
 
@@ -379,5 +514,6 @@ void Running_1::on_pushButton_3_clicked()
     //终止
     timer->stop();
     qDebug()<<"STOP";
+    send_serial("STP");
     Page_init();
 }

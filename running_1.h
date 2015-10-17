@@ -41,9 +41,11 @@ private:
 
 private:
     int m_fd;
-    char current_temperature[3];
-    char current_power[3];
-    char temper_and_power[5];
+    char current_temperature[4];
+    char current_power[4];
+    QString temp_power;
+    QString temp_temperature;
+    char temper_and_power[7];
     int receive_count;//can not little than 4
     QSocketNotifier *m_notifier;
 };
