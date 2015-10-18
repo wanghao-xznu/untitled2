@@ -19,8 +19,15 @@ SOURCES += main.cpp\
     running.cpp \
     running_1.cpp \
     numkeyboard.cpp \
-    setting_11.cpp \
-    setting_1.cpp
+    setting_1.cpp \
+    setting_2.cpp \
+    setting_3.cpp \
+    setting_4.cpp \
+    setting_5.cpp \
+    running_2.cpp \
+    running_3.cpp \
+    running_4.cpp \
+    running_5.cpp
 
 HEADERS  += mainwindow.h \
     select.h \
@@ -28,9 +35,16 @@ HEADERS  += mainwindow.h \
     running.h \
     running_1.h \
     numkeyboard.h \
-    setting_11.h \
     setting_1.h \
-    bilang.h
+    bilang.h \
+    setting_2.h \
+    setting_3.h \
+    setting_4.h \
+    setting_5.h \
+    running_2.h \
+    running_3.h \
+    running_4.h \
+    running_5.h
 
 FORMS    += mainwindow.ui \
     select.ui \
@@ -38,5 +52,12 @@ FORMS    += mainwindow.ui \
     running.ui \
     running_1.ui \
     numkeyboard.ui \
-    setting_11.ui \
-    setting_1.ui
+    setting_1.ui \
+    setting_2.ui \
+    setting_3.ui \
+    setting_4.ui \
+    setting_5.ui \
+    running_2.ui \
+    running_3.ui \
+    running_4.ui \
+    running_5.ui
