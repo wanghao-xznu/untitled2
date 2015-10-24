@@ -75,3 +75,72 @@ void Running::on_pushButton_clicked()
         g_running_1->exec();
     }
 }
+
+void Running::on_pushButton_2_clicked()
+{
+    if(g_running_2==NULL)
+    {
+    g_running_2 = new Running_2;
+    g_running_2->show();
+    g_running_2->exec();
+    }
+    else
+    {
+        delete g_running_1;
+        g_running_2 = new Running_2;
+        g_running_2->show();
+        g_running_2->exec();
+    }
+
+}
+
+void Running::on_pushButton_3_clicked()
+{
+    if(g_running_3==NULL)
+    {
+    g_running_3 = new Running_3;
+    g_running_3->show();
+    g_running_3->exec();
+    }
+    else
+    {
+        delete g_running_1;
+        g_running_3 = new Running_3;
+        g_running_3->show();
+        g_running_3->exec();
+    }
+}
+
+void Running::on_pushButton_4_clicked()
+{
+    if(g_running_4==NULL)
+    {
+    g_running_4 = new Running_4;
+    g_running_4->show();
+    g_running_4->exec();
+    }
+    else
+    {
+        delete g_running_4;
+        g_running_4 = new Running_4;
+        g_running_4->show();
+        g_running_4->exec();
+    }
+}
+
+void Running::on_pushButton_5_clicked()
+{
+    if(g_running_5==NULL)
+    {
+    g_running_5 = new Running_5;
+    g_running_5->show();
+    g_running_5->exec();
+    }
+    else
+    {
+        delete g_running_5;
+        g_running_5 = new Running_5;
+        g_running_5->show();
+        g_running_5->exec();
+    }
+}
