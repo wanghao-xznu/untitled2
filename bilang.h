@@ -37,6 +37,31 @@ extern Running_4 *g_running_4;
 extern Running_5 *g_running_5;
 
 
+extern int temp10;
+extern int temp11;
+extern int temp12;
+extern int temp13;
+extern int temp20;
+extern int temp21;
+extern int temp22;
+extern int temp23;
+extern int temp30;
+extern int temp31;
+extern int temp32;
+extern int temp33;
+extern int temp40;
+extern int temp41;
+extern int temp42;
+extern int temp43;
+extern int temp50;
+extern int temp51;
+extern int temp52;
+extern int temp53;
+extern int gobal;
+
+extern int duanwei;//尽量不要使用全局变量
+
+
 
 //void delete_all_but_this((void *)current_widget);
 

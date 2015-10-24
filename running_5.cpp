@@ -19,39 +19,48 @@
 
 Running_5 *g_running_5=NULL;
 
-extern int gobal;
-extern int temp11;
-extern int temp12;
-extern int temp21;
-extern int temp22;
-extern int temp31;
-extern int temp32;
-extern int temp41;
-extern int temp42;
-extern int temp51;
-extern int temp52;
-extern int duanwei;//尽量不要使用全局变量
+
 extern QString arr_setting[5][6];
 void Running_5::Page_init()
 {
+    temp10=arr_setting[0][0].toInt();
     temp11=arr_setting[0][1].toInt();
     temp12=arr_setting[0][2].toInt();
+    temp13=arr_setting[0][3].toInt();
+    temp20=arr_setting[1][0].toInt();
     temp21=arr_setting[1][1].toInt();
     temp22=arr_setting[1][2].toInt();
+    temp23=arr_setting[1][3].toInt();
+    temp30=arr_setting[2][0].toInt();
     temp31=arr_setting[2][1].toInt();
     temp32=arr_setting[2][2].toInt();
+    temp33=arr_setting[2][3].toInt();
+    temp41=arr_setting[3][0].toInt();
     temp41=arr_setting[3][1].toInt();
     temp42=arr_setting[3][2].toInt();
+    temp42=arr_setting[3][3].toInt();
+    temp51=arr_setting[4][0].toInt();
     temp51=arr_setting[4][1].toInt();
     temp52=arr_setting[4][2].toInt();
+    temp52=arr_setting[4][3].toInt();
     duanwei=1;
     receive_count=10;
     ui->lcdNumber->display(temp11);
     ui->lcdNumber_6->display(temp12);
-    ui->lcdNumber_3->display(duanwei);
-    ui->lcdNumber->setMode(QLCDNumber::Dec);
-    ui->lcdNumber_6->setMode(QLCDNumber::Dec);
 
+    ui->lcdNumber_2->display(temp11);
+    ui->lcdNumber_7->display(temp12);
+
+    ui->lcdNumber_3->display(duanwei);
+    ui->lcdNumber_4->display(temp10);
+    ui->lcdNumber_5->display(temp13);
+    ui->lcdNumber->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_2->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_3->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_4->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_5->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_6->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_7->setMode(QLCDNumber::Dec);
 
 }
 
@@ -76,35 +85,8 @@ Running_5::Running_5(QWidget *parent) :
     file.close();
 
     ui->setupUi(this);
-#if 0
-    ui->lcdNumber->display(100);
-    //设置晶体管控件QLCDNumber能显示的位数
-    //ui->lcdNumber->setDigitCount(10);
-    //设置显示的模式为十进制
-    ui->lcdNumber->setMode(QLCDNumber::Dec);
-    //新建一个QTimer对象
-    timer = new QTimer();
-    //设置定时器每个多少毫秒发送一个timeout()信号
-    timer->setInterval(1000);
-
-    connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
-#endif
-    //    temp11=arr_setting[0][1].toInt();
-    //    temp12=arr_setting[0][2].toInt();
-    //    temp21=arr_setting[1][1].toInt();
-    //    temp22=arr_setting[1][2].toInt();
-    //    temp31=arr_setting[2][1].toInt();
-    //    temp32=arr_setting[2][2].toInt();
-    //    temp41=arr_setting[3][1].toInt();
-    //    temp42=arr_setting[3][2].toInt();
-    //    temp51=arr_setting[4][1].toInt();
-    //    temp52=arr_setting[4][2].toInt();
-    //    ui->lcdNumber->display(temp11);
-    //    ui->lcdNumber_6->display(temp12);
-    //    ui->lcdNumber->setMode(QLCDNumber::Dec);
-    //    ui->lcdNumber_6->setMode(QLCDNumber::Dec);
-        Page_init();
-            open_serial();
+    Page_init();
+    open_serial();
 
 
     //新建一个QTimer对象
@@ -191,120 +173,129 @@ bool Running_5::send_serial(QString str)
 
 void Running_5::onTimerOut()
 {
-     ui->lcdNumber_3->display(duanwei);
-    switch (duanwei)
-    {
-        case 1:
-                    if(temp12!=0){
-                        ui->lcdNumber_6->display(--temp12);
-                        ui->lcdNumber->display(temp11);
-                    }
-                    else{
-                        if(temp11!=0){
-                            ui->lcdNumber->display(--temp11);
-                            temp12=60;
-                            ui->lcdNumber_6->display(--temp12);
+    ui->lcdNumber_3->display(duanwei);
+   switch (duanwei)
+   {
+       case 1:
+                   if(temp12!=0){
+                       ui->lcdNumber_6->display(--temp12);
+                       ui->lcdNumber->display(temp11);
+                   }
+                   else{
+                       if(temp11!=0){
+                           ui->lcdNumber->display(--temp11);
+                           temp12=60;
+                           ui->lcdNumber_6->display(--temp12);
 
-                        }
-                        else{//分和秒都为0
-                            //timer->stop();
-                            //应该装载下一次，并且段位加一
-                            duanwei++;
-                            //send duanwei 2 cmd
-                            on_pushButton_clicked();
+                       }
+                       else{//分和秒都为0
+                           //timer->stop();
+                           //应该装载下一次，并且段位加一
+                           duanwei++;
+                           ui->lcdNumber_4->display(temp20);//temperature
+                           ui->lcdNumber_5->display(temp23);//power
+                           //send duanwei 2 cmd
+                           on_pushButton_clicked();
 
-                        }
-                    }
-                    break;
-        case 2:
-                    if(temp22!=0){
-                        ui->lcdNumber_6->display(--temp22);
-                        ui->lcdNumber->display(temp21);
-                    }
-                    else{
-                        if(temp21!=0){
-                            ui->lcdNumber->display(--temp21);
-                            temp22=60;
-                            ui->lcdNumber_6->display(--temp22);
+                       }
+                   }
+                   break;
+       case 2:
+                   if(temp22!=0){
+                       ui->lcdNumber_6->display(--temp22);
+                       ui->lcdNumber->display(temp21);
+                   }
+                   else{
+                       if(temp21!=0){
+                           ui->lcdNumber->display(--temp21);
+                           temp22=60;
+                           ui->lcdNumber_6->display(--temp22);
 
-                        }
-                        else{//分和秒都为0
-                            //timer->stop();
-                            //应该装载下一次，并且段位加一
-                            duanwei++;
-                            //send duanwei 3 cmd
-                            on_pushButton_clicked();
-                        }
-                    }
-                    break;
-        case 3:
-                    if(temp32!=0){
-                        ui->lcdNumber_6->display(--temp32);
-                        ui->lcdNumber->display(temp31);
-                    }
-                    else{
-                        if(temp31!=0){
-                            ui->lcdNumber->display(--temp31);
-                            temp32=60;
-                            ui->lcdNumber_6->display(--temp32);
+                       }
+                       else{//分和秒都为0
+                           //timer->stop();
+                           //应该装载下一次，并且段位加一
+                           duanwei++;
+                           ui->lcdNumber_4->display(temp30);//temperature
+                           ui->lcdNumber_5->display(temp33);//power
+                           //send duanwei 3 cmd
+                           on_pushButton_clicked();
+                       }
+                   }
+                   break;
+       case 3:
+                   if(temp32!=0){
+                       ui->lcdNumber_6->display(--temp32);
+                       ui->lcdNumber->display(temp31);
+                   }
+                   else{
+                       if(temp31!=0){
+                           ui->lcdNumber->display(--temp31);
+                           temp32=60;
+                           ui->lcdNumber_6->display(--temp32);
 
-                        }
-                        else{//分和秒都为0
-                            //timer->stop();
-                            //应该装载下一次，并且段位加一
-                            duanwei++;
-                            //send duanwwei 4 cmd
-                            on_pushButton_clicked();
-                        }
-                    }
-                    break;
-        case 4:
-                    if(temp42!=0){
-                        ui->lcdNumber_6->display(--temp42);
-                        ui->lcdNumber->display(temp41);
-                    }
-                    else{
-                        if(temp41!=0){
-                            ui->lcdNumber->display(--temp41);
-                            temp42=60;
-                            ui->lcdNumber_6->display(--temp42);
+                       }
+                       else{//分和秒都为0
+                           //timer->stop();
+                           //应该装载下一次，并且段位加一
+                           duanwei++;
+                           ui->lcdNumber_4->display(temp40);//temperature
+                           ui->lcdNumber_5->display(temp43);//power
+                           //send duanwwei 4 cmd
+                           on_pushButton_clicked();
+                       }
+                   }
+                   break;
+       case 4:
+                   if(temp42!=0){
+                       ui->lcdNumber_6->display(--temp42);
+                       ui->lcdNumber->display(temp41);
+                   }
+                   else{
+                       if(temp41!=0){
+                           ui->lcdNumber->display(--temp41);
+                           temp42=60;
+                           ui->lcdNumber_6->display(--temp42);
 
-                        }
-                        else{//分和秒都为0
-                            //timer->stop();
-                            //应该装载下一次，并且段位加一
-                            duanwei++;
-                            //send duanwei 5 cmd
-                            on_pushButton_clicked();
-                        }
-                    }
-                    break;
-        case 5:
-                    if(temp52!=0){
-                        ui->lcdNumber_6->display(--temp52);
-                        ui->lcdNumber->display(temp51);
-                    }
-                    else{
-                        if(temp51!=0){
-                            ui->lcdNumber->display(--temp51);
-                            temp52=60;
-                            ui->lcdNumber_6->display(--temp52);
+                       }
+                       else{//分和秒都为0
+                           //timer->stop();
+                           //应该装载下一次，并且段位加一
+                           duanwei++;
+                           ui->lcdNumber_4->display(temp50);//temperature
+                           ui->lcdNumber_5->display(temp53);//power
+                           //send duanwei 5 cmd
+                           on_pushButton_clicked();
+                       }
+                   }
+                   break;
+       case 5:
+                   if(temp52!=0){
+                       ui->lcdNumber_6->display(--temp52);
+                       ui->lcdNumber->display(temp51);
+                   }
+                   else{
+                       if(temp51!=0){
+                           ui->lcdNumber->display(--temp51);
+                           temp52=60;
+                           ui->lcdNumber_6->display(--temp52);
 
-                        }
-                        else{//分和秒都为0
-                            //timer->stop();
-                            //应该装载下一次，并且段位加一
-                            //duanwei++;
-                            //send stop CMD
-                            timer->stop();
-                            qDebug()<<"Game over";
-                        }
-                    }
-                    break;
-    default:
-        break;
+                       }
+                       else{//分和秒都为0
+                           //timer->stop();
+                           //应该装载下一次，并且段位加一
+                           //duanwei++;
+                           //send stop CMD
+                           timer->stop();
+                           qDebug()<<"Game over";
+                       }
+                   }
+                   break;
+   default:
+       break;
 
-    }
+   }
+
 
 
 }

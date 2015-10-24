@@ -20,37 +20,68 @@
 Running_1 *g_running_1=NULL;
 
 int gobal=100;
+int temp10;
 int temp11;
 int temp12;
+int temp13;
+int temp20;
 int temp21;
 int temp22;
+int temp23;
+int temp30;
 int temp31;
 int temp32;
+int temp33;
+int temp40;
 int temp41;
 int temp42;
+int temp43;
+int temp50;
 int temp51;
 int temp52;
+int temp53;
 int duanwei=1;//尽量不要使用全局变量
 extern QString arr_setting[5][6];
 void Running_1::Page_init()
 {
+    temp10=arr_setting[0][0].toInt();
     temp11=arr_setting[0][1].toInt();
     temp12=arr_setting[0][2].toInt();
+    temp13=arr_setting[0][3].toInt();
+    temp20=arr_setting[1][0].toInt();
     temp21=arr_setting[1][1].toInt();
     temp22=arr_setting[1][2].toInt();
+    temp23=arr_setting[1][3].toInt();
+    temp30=arr_setting[2][0].toInt();
     temp31=arr_setting[2][1].toInt();
     temp32=arr_setting[2][2].toInt();
+    temp33=arr_setting[2][3].toInt();
+    temp41=arr_setting[3][0].toInt();
     temp41=arr_setting[3][1].toInt();
     temp42=arr_setting[3][2].toInt();
+    temp42=arr_setting[3][3].toInt();
+    temp51=arr_setting[4][0].toInt();
     temp51=arr_setting[4][1].toInt();
     temp52=arr_setting[4][2].toInt();
+    temp52=arr_setting[4][3].toInt();
     duanwei=1;
     receive_count=10;
     ui->lcdNumber->display(temp11);
     ui->lcdNumber_6->display(temp12);
+
+    ui->lcdNumber_2->display(temp11);
+    ui->lcdNumber_7->display(temp12);
+
     ui->lcdNumber_3->display(duanwei);
+    ui->lcdNumber_4->display(temp10);//temperature
+    ui->lcdNumber_5->display(temp13);//power
     ui->lcdNumber->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_2->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_3->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_4->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_5->setMode(QLCDNumber::Dec);
     ui->lcdNumber_6->setMode(QLCDNumber::Dec);
+    ui->lcdNumber_7->setMode(QLCDNumber::Dec);
 
 
 }
@@ -76,35 +107,8 @@ Running_1::Running_1(QWidget *parent) :
     file.close();
 
     ui->setupUi(this);
-#if 0
-    ui->lcdNumber->display(100);
-    //设置晶体管控件QLCDNumber能显示的位数
-    //ui->lcdNumber->setDigitCount(10);
-    //设置显示的模式为十进制
-    ui->lcdNumber->setMode(QLCDNumber::Dec);
-    //新建一个QTimer对象
-    timer = new QTimer();
-    //设置定时器每个多少毫秒发送一个timeout()信号
-    timer->setInterval(1000);
-
-    connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
-#endif
-    //    temp11=arr_setting[0][1].toInt();
-    //    temp12=arr_setting[0][2].toInt();
-    //    temp21=arr_setting[1][1].toInt();
-    //    temp22=arr_setting[1][2].toInt();
-    //    temp31=arr_setting[2][1].toInt();
-    //    temp32=arr_setting[2][2].toInt();
-    //    temp41=arr_setting[3][1].toInt();
-    //    temp42=arr_setting[3][2].toInt();
-    //    temp51=arr_setting[4][1].toInt();
-    //    temp52=arr_setting[4][2].toInt();
-    //    ui->lcdNumber->display(temp11);
-    //    ui->lcdNumber_6->display(temp12);
-    //    ui->lcdNumber->setMode(QLCDNumber::Dec);
-    //    ui->lcdNumber_6->setMode(QLCDNumber::Dec);
-        Page_init();
-            open_serial();
+    Page_init();
+    open_serial();
 
 
     //新建一个QTimer对象
@@ -214,6 +218,8 @@ void Running_1::onTimerOut()
                             //timer->stop();
                             //应该装载下一次，并且段位加一
                             duanwei++;
+                            ui->lcdNumber_4->display(temp20);//temperature
+                            ui->lcdNumber_5->display(temp23);//power
                             //send duanwei 2 cmd
                             on_pushButton_clicked();
 
@@ -236,6 +242,8 @@ void Running_1::onTimerOut()
                             //timer->stop();
                             //应该装载下一次，并且段位加一
                             duanwei++;
+                            ui->lcdNumber_4->display(temp30);//temperature
+                            ui->lcdNumber_5->display(temp33);//power
                             //send duanwei 3 cmd
                             on_pushButton_clicked();
                         }
@@ -257,6 +265,8 @@ void Running_1::onTimerOut()
                             //timer->stop();
                             //应该装载下一次，并且段位加一
                             duanwei++;
+                            ui->lcdNumber_4->display(temp40);//temperature
+                            ui->lcdNumber_5->display(temp43);//power
                             //send duanwwei 4 cmd
                             on_pushButton_clicked();
                         }
@@ -278,6 +288,8 @@ void Running_1::onTimerOut()
                             //timer->stop();
                             //应该装载下一次，并且段位加一
                             duanwei++;
+                            ui->lcdNumber_4->display(temp50);//temperature
+                            ui->lcdNumber_5->display(temp53);//power
                             //send duanwei 5 cmd
                             on_pushButton_clicked();
                         }

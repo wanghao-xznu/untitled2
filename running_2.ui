@@ -83,7 +83,7 @@
     </font>
    </property>
    <property name="text">
-    <string>当前时间：</string>
+    <string>设定时间：</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_4">
@@ -274,7 +274,7 @@
     </font>
    </property>
    <property name="text">
-    <string>设定时间：</string>
+    <string>当前时间：</string>
    </property>
   </widget>
   <widget class="Line" name="line">
