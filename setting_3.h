@@ -82,6 +82,8 @@ private slots:
 
     void on_pushButton_31_clicked();
 
+    void on_pushButton_33_clicked();
+
 private:
     Ui::Setting_3 *ui;
     void load_cfg();

@@ -548,3 +548,21 @@ void Setting_3::on_pushButton_31_clicked()
     ui->pushButton_31->setText(ret);
     arr_setting[4][5]=ret;
 }
+
+void Setting_3::on_pushButton_33_clicked()
+{
+    if(g_setting==NULL)
+    {
+    g_setting = new Setting;
+    g_setting->show();
+    g_setting->exec();
+    }
+    else
+    {
+        delete g_setting;
+        g_setting = new Setting;
+        g_setting->show();
+        g_setting->exec();
+
+    }
+}

@@ -91,20 +91,7 @@ void Setting_2::on_pushButton_clicked()//back 保存按钮
     }
     file.close();
     //this->close();
-    if(g_setting==NULL)
-    {
-    g_setting = new Setting;
-    g_setting->show();
-    g_setting->exec();
-    }
-    else
-    {
-        delete g_setting;
-        g_setting = new Setting;
-        g_setting->show();
-        g_setting->exec();
 
-    }
 }
 
 void Setting_2::on_pushButton_2_clicked()//1
@@ -547,4 +534,23 @@ void Setting_2::on_pushButton_31_clicked()
     ret=numkeyboard.returnValue();
     ui->pushButton_31->setText(ret);
     arr_setting[4][5]=ret;
+}
+
+void Setting_2::on_pushButton_33_clicked()
+{
+    if(g_setting==NULL)
+    {
+    g_setting = new Setting;
+    g_setting->show();
+    g_setting->exec();
+    }
+    else
+    {
+        delete g_setting;
+        g_setting = new Setting;
+        g_setting->show();
+        g_setting->exec();
+
+    }
+
 }
