@@ -113,7 +113,13 @@ void Setting_5::on_pushButton_2_clicked()//1
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
-    ui->pushButton_2->setText(ret);
+    if(ret.toInt()>=500){
+        ret = "500";
+        ui->pushButton_2->setText("500");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     arr_setting[0][0]=ret;//下表弄错了，明天注意修改
 
 }
@@ -125,6 +131,13 @@ void Setting_5::on_pushButton_7_clicked()//2
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=999){
+        ret = "999";
+        ui->pushButton_2->setText("999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_7->setText(ret);
     arr_setting[0][1]=ret;
 
@@ -136,6 +149,13 @@ void Setting_5::on_pushButton_8_clicked()//3
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=59){
+        ret = "59";
+        ui->pushButton_2->setText("59");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_8->setText(ret);
     arr_setting[0][2]=ret;
 }
@@ -146,6 +166,13 @@ void Setting_5::on_pushButton_17_clicked()//4
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=9999){
+        ret = "9999";
+        ui->pushButton_2->setText("9999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_17->setText(ret);
     arr_setting[0][3]=ret;
 }
@@ -176,6 +203,13 @@ void Setting_5::on_pushButton_3_clicked()//7
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=500){
+        ret = "500";
+        ui->pushButton_2->setText("500");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_3->setText(ret);
     arr_setting[1][0]=ret;
 }
@@ -186,6 +220,13 @@ void Setting_5::on_pushButton_9_clicked()//8
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=999){
+        ret = "999";
+        ui->pushButton_2->setText("999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_9->setText(ret);
     arr_setting[1][1]=ret;
 }
@@ -196,6 +237,13 @@ void Setting_5::on_pushButton_10_clicked()//9
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=59){
+        ret = "59";
+        ui->pushButton_2->setText("59");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_10->setText(ret);
     arr_setting[1][2]=ret;
 }
@@ -206,11 +254,18 @@ void Setting_5::on_pushButton_20_clicked()//10
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=9999){
+        ret = "9999";
+        ui->pushButton_2->setText("9999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_20->setText(ret);
     arr_setting[1][3]=ret;
 }
 
-void Setting_5::on_pushButton_24_clicked()
+void Setting_5::on_pushButton_24_clicked()//11
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
@@ -220,7 +275,7 @@ void Setting_5::on_pushButton_24_clicked()
     arr_setting[1][4]=ret;
 }
 
-void Setting_5::on_pushButton_25_clicked()
+void Setting_5::on_pushButton_25_clicked()//12
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
@@ -230,47 +285,75 @@ void Setting_5::on_pushButton_25_clicked()
     arr_setting[1][5]=ret;
 }
 
-void Setting_5::on_pushButton_4_clicked()
+void Setting_5::on_pushButton_4_clicked()//13
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=500){
+        ret = "500";
+        ui->pushButton_2->setText("500");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_4->setText(ret);
     arr_setting[2][0]=ret;
 }
 
-void Setting_5::on_pushButton_11_clicked()
+void Setting_5::on_pushButton_11_clicked()//14
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=999){
+        ret = "999";
+        ui->pushButton_2->setText("999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_11->setText(ret);
     arr_setting[2][1]=ret;
 }
 
-void Setting_5::on_pushButton_12_clicked()
+void Setting_5::on_pushButton_12_clicked()//15
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=59){
+        ret = "59";
+        ui->pushButton_2->setText("59");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_12->setText(ret);
     arr_setting[2][2]=ret;
 }
 
-void Setting_5::on_pushButton_21_clicked()
+void Setting_5::on_pushButton_21_clicked()//16
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=9999){
+        ret = "9999";
+        ui->pushButton_2->setText("9999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_21->setText(ret);
     arr_setting[2][3]=ret;
 }
 
-void Setting_5::on_pushButton_26_clicked()
+void Setting_5::on_pushButton_26_clicked()//17
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
@@ -280,7 +363,7 @@ void Setting_5::on_pushButton_26_clicked()
     arr_setting[2][4]=ret;
 }
 
-void Setting_5::on_pushButton_27_clicked()
+void Setting_5::on_pushButton_27_clicked()//18
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
@@ -290,47 +373,75 @@ void Setting_5::on_pushButton_27_clicked()
     arr_setting[2][5]=ret;
 }
 
-void Setting_5::on_pushButton_5_clicked()
+void Setting_5::on_pushButton_5_clicked()//19
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=500){
+        ret = "500";
+        ui->pushButton_2->setText("500");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_5->setText(ret);
     arr_setting[3][0]=ret;
 }
 
-void Setting_5::on_pushButton_13_clicked()
+void Setting_5::on_pushButton_13_clicked()//20
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=999){
+        ret = "999";
+        ui->pushButton_2->setText("999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_13->setText(ret);
     arr_setting[3][1]=ret;
 }
 
-void Setting_5::on_pushButton_14_clicked()
+void Setting_5::on_pushButton_14_clicked()//21
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=59){
+        ret = "59";
+        ui->pushButton_2->setText("59");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_14->setText(ret);
     arr_setting[3][2]=ret;
 }
 
-void Setting_5::on_pushButton_22_clicked()
+void Setting_5::on_pushButton_22_clicked()//22
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=9999){
+        ret = "9999";
+        ui->pushButton_2->setText("9999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_22->setText(ret);
     arr_setting[3][3]=ret;
 }
 
-void Setting_5::on_pushButton_28_clicked()
+void Setting_5::on_pushButton_28_clicked()//23
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
@@ -340,7 +451,7 @@ void Setting_5::on_pushButton_28_clicked()
     arr_setting[3][4]=ret;
 }
 
-void Setting_5::on_pushButton_29_clicked()
+void Setting_5::on_pushButton_29_clicked()//24
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
@@ -350,42 +461,70 @@ void Setting_5::on_pushButton_29_clicked()
     arr_setting[3][5]=ret;
 }
 
-void Setting_5::on_pushButton_6_clicked()
+void Setting_5::on_pushButton_6_clicked()//25
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=500){
+        ret = "500";
+        ui->pushButton_2->setText("500");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_6->setText(ret);
     arr_setting[4][0]=ret;
 }
 
-void Setting_5::on_pushButton_15_clicked()
+void Setting_5::on_pushButton_15_clicked()//26
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=999){
+        ret = "999";
+        ui->pushButton_2->setText("999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_15->setText(ret);
     arr_setting[4][1]=ret;
 }
 
-void Setting_5::on_pushButton_16_clicked()
+void Setting_5::on_pushButton_16_clicked()//27
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=59){
+        ret = "59";
+        ui->pushButton_2->setText("59");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_16->setText(ret);
     arr_setting[4][2]=ret;
 }
 
-void Setting_5::on_pushButton_23_clicked()
+void Setting_5::on_pushButton_23_clicked()//28
 {
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
     ret=numkeyboard.returnValue();
+    if(ret.toInt()>=999){
+        ret = "999";
+        ui->pushButton_2->setText("999");
+    }
+    else{
+        ui->pushButton_2->setText(ret);
+    }
     ui->pushButton_23->setText(ret);
     arr_setting[4][3]=ret;
 }
