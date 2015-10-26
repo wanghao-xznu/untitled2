@@ -1,6 +1,5 @@
 #include "numkeyboard.h"
 #include "ui_numkeyboard.h"
-#include "ui_setting_11.h"
 #include "bilang.h"
 
 NumKeyBoard::NumKeyBoard(QWidget *parent) :
