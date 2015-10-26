@@ -335,7 +335,7 @@ void Running_1::on_pushButton_4_clicked()//返回按钮
     duanwei=1;
     timer->stop();
     send_serial("STP");
-   //close_serial();
+    close_serial();
     //this->close();
     if(g_running==NULL)
     {
