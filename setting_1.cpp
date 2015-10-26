@@ -8,6 +8,7 @@
 #include "bilang.h"
 
 Setting_1 *g_setting_1=NULL;
+char flag_num = 0;
 
 QString arr_setting[5][6];
 
@@ -96,6 +97,7 @@ void Setting_1::on_pushButton_clicked()//only save
 
 void Setting_1::on_pushButton_2_clicked()//1
 {
+    flag_num = 'T';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -114,6 +116,7 @@ void Setting_1::on_pushButton_2_clicked()//1
 
 void Setting_1::on_pushButton_7_clicked()//2
 {
+    flag_num = 'M';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -132,6 +135,7 @@ void Setting_1::on_pushButton_7_clicked()//2
 
 void Setting_1::on_pushButton_8_clicked()//3
 {
+    flag_num = 'S';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -149,6 +153,7 @@ void Setting_1::on_pushButton_8_clicked()//3
 
 void Setting_1::on_pushButton_17_clicked()//4
 {
+    flag_num = 'P';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -186,6 +191,7 @@ void Setting_1::on_pushButton_19_clicked()//6
 
 void Setting_1::on_pushButton_3_clicked()//7
 {
+    flag_num = 'T';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -203,6 +209,7 @@ void Setting_1::on_pushButton_3_clicked()//7
 
 void Setting_1::on_pushButton_9_clicked()//8
 {
+    flag_num = 'M';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -220,6 +227,7 @@ void Setting_1::on_pushButton_9_clicked()//8
 
 void Setting_1::on_pushButton_10_clicked()//9
 {
+    flag_num = 'S';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -237,6 +245,7 @@ void Setting_1::on_pushButton_10_clicked()//9
 
 void Setting_1::on_pushButton_20_clicked()//10
 {
+    flag_num = 'P';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -274,6 +283,7 @@ void Setting_1::on_pushButton_25_clicked()//12
 
 void Setting_1::on_pushButton_4_clicked()//13
 {
+    flag_num = 'T';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -291,6 +301,7 @@ void Setting_1::on_pushButton_4_clicked()//13
 
 void Setting_1::on_pushButton_11_clicked()//14
 {
+    flag_num = 'M';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -308,6 +319,7 @@ void Setting_1::on_pushButton_11_clicked()//14
 
 void Setting_1::on_pushButton_12_clicked()//15
 {
+    flag_num = 'S';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -325,6 +337,7 @@ void Setting_1::on_pushButton_12_clicked()//15
 
 void Setting_1::on_pushButton_21_clicked()//16
 {
+    flag_num = 'P';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -362,6 +375,7 @@ void Setting_1::on_pushButton_27_clicked()//18
 
 void Setting_1::on_pushButton_5_clicked()//19
 {
+    flag_num = 'T';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -379,6 +393,7 @@ void Setting_1::on_pushButton_5_clicked()//19
 
 void Setting_1::on_pushButton_13_clicked()//20
 {
+    flag_num = 'M';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -396,6 +411,7 @@ void Setting_1::on_pushButton_13_clicked()//20
 
 void Setting_1::on_pushButton_14_clicked()//21
 {
+    flag_num = 'S';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -413,6 +429,7 @@ void Setting_1::on_pushButton_14_clicked()//21
 
 void Setting_1::on_pushButton_22_clicked()//22
 {
+    flag_num = 'P';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -450,6 +467,7 @@ void Setting_1::on_pushButton_29_clicked()//24
 
 void Setting_1::on_pushButton_6_clicked()//25
 {
+    flag_num = 'T';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -467,6 +485,7 @@ void Setting_1::on_pushButton_6_clicked()//25
 
 void Setting_1::on_pushButton_15_clicked()//26
 {
+    flag_num = 'M';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -484,6 +503,7 @@ void Setting_1::on_pushButton_15_clicked()//26
 
 void Setting_1::on_pushButton_16_clicked()//27
 {
+    flag_num = 'S';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();
@@ -501,6 +521,7 @@ void Setting_1::on_pushButton_16_clicked()//27
 
 void Setting_1::on_pushButton_23_clicked()//28
 {
+    flag_num = 'P';
     NumKeyBoard numkeyboard;
     //numkeyboard.show();
     //numkeyboard.exec();

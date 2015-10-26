@@ -61,6 +61,9 @@ extern int gobal;
 
 extern int duanwei;//尽量不要使用全局变量
 
+extern char flag_num;
+
+
 
 
 //void delete_all_but_this((void *)current_widget);

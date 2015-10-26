@@ -15,6 +15,27 @@ NumKeyBoard::NumKeyBoard(QWidget *parent) :
     ui->lineEdit->setAlignment(Qt::AlignRight);
     ui->lineEdit->setMaxLength(15);
 
+    if(flag_num == 'T')
+        ui->label->setText("TestTest");
+
+    switch (flag_num)
+    {
+        case 'T':
+            ui->label->setText("0~500");
+            break;
+        case 'M':
+            ui->label->setText("0~999");
+            break;
+        case 'S':
+            ui->label->setText("0~59");
+            break;
+        case 'P':
+            ui->label->setText("50~999");
+            break;
+        default:
+            break;
+    }
+
     QFont font = ui->lineEdit->font();
     font.setPointSize(font.pointSize() + 8);
     ui->lineEdit->setFont(font);
