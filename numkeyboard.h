@@ -40,7 +40,8 @@ private slots:
 
     void on_pushButton_11_clicked();
 
-private:
+//private:
+public:
     Ui::NumKeyBoard *ui;
 };
 
