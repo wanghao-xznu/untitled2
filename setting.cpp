@@ -142,18 +142,18 @@ void Setting::on_pushButton_4_clicked()
 
 void Setting::on_pushButton_5_clicked()
 {
-    if(g_setting_4==NULL)
+    if(g_setting_5==NULL)
     {
-    g_setting_4 = new Setting_4;
-    g_setting_4->show();
-    g_setting_4->exec();
+    g_setting_5 = new Setting_5;
+    g_setting_5->show();
+    g_setting_5->exec();
     }
     else
     {
-        delete g_setting_4;
-        g_setting_4 = new Setting_4;
-        g_setting_4->show();
-        g_setting_4->exec();
+        delete g_setting_5;
+        g_setting_5 = new Setting_5;
+        g_setting_5->show();
+        g_setting_5->exec();
         qDebug()<<"This is the second time come into setting_1!"<<endl;
     }
 
