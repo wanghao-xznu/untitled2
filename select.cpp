@@ -18,6 +18,7 @@ Select::Select(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//去掉标题栏
+    ui->label->setStyleSheet("QLabel {background: transparent;}");
 }
 
 Select::~Select()

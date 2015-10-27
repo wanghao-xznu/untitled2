@@ -12,6 +12,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);//去掉标题栏
+    ui->label->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_2->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_3->setStyleSheet("QLabel {background: transparent;}");
+    //ui->pushButton->setStyleSheet("QPushButton {background: transparent;}");
 }
 
 MainWindow::~MainWindow()
