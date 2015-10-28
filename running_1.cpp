@@ -222,6 +222,7 @@ void Running_1::onTimerOut()
                             ui->lcdNumber_5->display(temp23);//power
                             //send duanwei 2 cmd
                             on_pushButton_clicked();
+                            //是不是应该在这里加上到达温度时间？,确切的说应该是启动定时器
 
                         }
                     }
