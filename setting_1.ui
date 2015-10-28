@@ -129,7 +129,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>保存</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -876,7 +876,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Cancle</string>
+    <string>取消</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_33">
@@ -896,7 +896,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Back</string>
+    <string>返回</string>
    </property>
   </widget>
  </widget>
