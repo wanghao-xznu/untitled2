@@ -69,6 +69,19 @@ Setting_5::Setting_5(QWidget *parent) :
     ui->setupUi(this);//在这里应该装载文件cfg文件内容
     load_cfg();
     this->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//去掉标题栏
+    ui->label->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_2->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_3->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_4->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_5->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_6->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_7->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_8->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_9->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_10->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_11->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_12->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_13->setStyleSheet("QLabel {background: transparent;}");
 }
 
 Setting_5::~Setting_5()

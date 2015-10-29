@@ -194,7 +194,6 @@ void get_current_temp_and_power(char)
                      //ui->lcdNumber_9->display(current_power);
                      ui->lcdNumber_9->display(temp_power.toInt());
 
-
                      //qDebug()<<current_temperature;
                      //ui->lcdNumber_8->display(current_temperature);
                      ui->lcdNumber_8->display(temp_temperature.toInt());
@@ -232,6 +231,13 @@ void Running_1::onTimerOut()
 
                         }
                     }
+                     if(temp_power.toInt()>=arr_setting[0][0].toInt())
+                     {
+                        //Save,这里是save时间，之前一直save 温度和功率了，时间应该简单点
+                        //将设置的时间减去当前的时间，然后通过公式计算出来，总共达到温度用去了多少时间
+                        //需要考虑一种情况就是设置段位的运行时间始终没有达到设置的温度，存储什么数据呢？
+                        //
+                     }
                     break;
         case 2:
                     if(temp22!=0){
@@ -255,6 +261,10 @@ void Running_1::onTimerOut()
                             on_pushButton_clicked();
                         }
                     }
+                     if(temp_power.toInt()>=arr_setting[1][0].toInt())
+                     {
+                        //Save
+                     }
                     break;
         case 3:
                     if(temp32!=0){
@@ -278,6 +288,10 @@ void Running_1::onTimerOut()
                             on_pushButton_clicked();
                         }
                     }
+                     if(temp_power.toInt()>=arr_setting[2][0].toInt())
+                     {
+                        //Save
+                     }
                     break;
         case 4:
                     if(temp42!=0){
@@ -301,6 +315,10 @@ void Running_1::onTimerOut()
                             on_pushButton_clicked();
                         }
                     }
+                     if(temp_power.toInt()>=arr_setting[3][0].toInt())
+                     {
+                        //Save
+                     }
                     break;
         case 5:
                     if(temp52!=0){
@@ -323,6 +341,10 @@ void Running_1::onTimerOut()
                             qDebug()<<"Game over";
                         }
                     }
+                     if(temp_power.toInt()>=arr_setting[4][0].toInt())
+                     {
+                        //Save
+                     }
                     break;
     default:
         break;
