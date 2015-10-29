@@ -118,6 +118,10 @@ Running_1::Running_1(QWidget *parent) :
 
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
 
+    timer_keep = new QTimer();
+    timer->setInterval(1000);
+    connect(timer_keep,SIGNAL(timeout()), this, SLOT(onTimerOut_keep()));
+
     this->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//去掉标题栏
 }
 int Running_1::open_serial()
@@ -189,6 +193,8 @@ void get_current_temp_and_power(char)
 
                      //ui->lcdNumber_9->display(current_power);
                      ui->lcdNumber_9->display(temp_power.toInt());
+
+
                      //qDebug()<<current_temperature;
                      //ui->lcdNumber_8->display(current_temperature);
                      ui->lcdNumber_8->display(temp_temperature.toInt());
@@ -326,6 +332,10 @@ void Running_1::onTimerOut()
 
 }
 
+void Running_1::onTimerOut_keep()
+{
+
+}
 Running_1::~Running_1()
 {
     delete ui;

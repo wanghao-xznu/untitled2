@@ -20,6 +20,7 @@ public:
 private slots:
     void on_pushButton_4_clicked();
     void onTimerOut();
+    void onTimerOut_keep();
 
     void on_pushButton_clicked();
 
@@ -35,6 +36,7 @@ private:
 private:
     Ui::Running_1 *ui;
     QTimer *timer;
+    QTimer *timer_keep;
     int open_serial();
     void close_serial();
     bool send_serial(QString);
