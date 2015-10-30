@@ -70,32 +70,19 @@ Setting_1::Setting_1(QWidget *parent) :
     ui->setupUi(this);//在这里应该装载文件cfg文件内容
     load_cfg();
     this->setWindowFlags(Qt::WindowStaysOnTopHint|Qt::FramelessWindowHint);//去掉标题栏
-//    ui->label->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_2->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_3->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_4->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_5->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_6->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_7->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_8->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_9->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_10->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_11->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_12->setStyleSheet("QLabel {background: transparent;}");
-//    ui->label_13->setStyleSheet("QLabel {background: transparent;}");
-//    ui->line->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_2->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_3->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_4->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_5->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_6->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_7->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_8->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_9->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_10->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_11->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_12->setStyleSheet("QLine {border: transparent;}");
-//    ui->line_13->setStyleSheet("QLine {border: transparent;}");
+    ui->label->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_2->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_3->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_4->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_5->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_6->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_7->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_8->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_9->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_10->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_11->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_12->setStyleSheet("QLabel {background: transparent;}");
+    ui->label_13->setStyleSheet("QLabel {background: transparent;}");
 
 }
 
