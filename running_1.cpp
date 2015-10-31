@@ -231,12 +231,13 @@ void Running_1::onTimerOut()
 
                         }
                     }
-                     if(temp_power.toInt()>=arr_setting[0][0].toInt())
+                     if((temp_power.toInt()>=arr_setting[0][0].toInt())&&flag_00)
                      {
                         //Save,这里是save时间，之前一直save 温度和功率了，时间应该简单点
                         //将设置的时间减去当前的时间，然后通过公式计算出来，总共达到温度用去了多少时间
                         //需要考虑一种情况就是设置段位的运行时间始终没有达到设置的温度，存储什么数据呢？
                         //
+                         flag_00 = 0;
                      }
                     break;
         case 2:
