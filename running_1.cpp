@@ -41,6 +41,12 @@ int temp51;
 int temp52;
 int temp53;
 int duanwei=1;//尽量不要使用全局变量
+//flag for keep time
+int flag_00=0;
+int flag_10=0;
+int flag_20=0;
+int flag_30=0;
+int flag_40=0;
 extern QString arr_setting[5][6];
 void Running_1::Page_init()
 {
@@ -82,6 +88,11 @@ void Running_1::Page_init()
     ui->lcdNumber_5->setMode(QLCDNumber::Dec);
     ui->lcdNumber_6->setMode(QLCDNumber::Dec);
     ui->lcdNumber_7->setMode(QLCDNumber::Dec);
+    flag_00 = 1;
+    flag_10 = 1;
+    flag_20 = 1;
+    flag_30 = 1;
+    flag_40 = 1;
 
 
 }
@@ -205,6 +216,7 @@ void get_current_temp_and_power(char)
 
 void Running_1::onTimerOut()
 {
+    int reach_time=0;
      ui->lcdNumber_3->display(duanwei);
     switch (duanwei)
     {
