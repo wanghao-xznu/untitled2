@@ -16,6 +16,9 @@
 #include "running_5.h"
 #include "mainwindow.h"
 
+//function
+extern void Save_config_file(QString file_name);
+
 
 //extern
 extern MainWindow *g_mianwindow;
@@ -62,6 +65,13 @@ extern int gobal;
 extern int duanwei;//尽量不要使用全局变量
 
 extern char flag_num;
+
+extern int flag_00;
+extern int flag_10;
+extern int flag_20;
+extern int flag_30;
+extern int flag_40;
+extern QString arr_setting[5][6];
 
 
 

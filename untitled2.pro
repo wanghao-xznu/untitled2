@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     running_2.cpp \
     running_3.cpp \
     running_4.cpp \
-    running_5.cpp
+    running_5.cpp \
+    bilang.cpp
 
 HEADERS  += mainwindow.h \
     select.h \

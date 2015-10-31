@@ -41,6 +41,13 @@ int temp51;
 int temp52;
 int temp53;
 int duanwei=1;//尽量不要使用全局变量
+//flag for keep time
+int flag_00 =0;
+int flag_10 =0;
+int flag_20 =0;
+int flag_30 =0;
+int flag_40 =0;
+
 extern QString arr_setting[5][6];
 void Running_1::Page_init()
 {
@@ -82,6 +89,12 @@ void Running_1::Page_init()
     ui->lcdNumber_5->setMode(QLCDNumber::Dec);
     ui->lcdNumber_6->setMode(QLCDNumber::Dec);
     ui->lcdNumber_7->setMode(QLCDNumber::Dec);
+    flag_00 = 1;
+    flag_10 = 1;
+    flag_20 = 1;
+    flag_30 = 1;
+    flag_40 = 1;
+
 
 
 }
@@ -204,6 +217,7 @@ void get_current_temp_and_power(char)
 
 void Running_1::onTimerOut()
 {
+    int reach_time=0;
      ui->lcdNumber_3->display(duanwei);
     switch (duanwei)
     {
@@ -233,11 +247,12 @@ void Running_1::onTimerOut()
                     }
                      if((temp_power.toInt()>=arr_setting[0][0].toInt())&&flag_00)
                      {
-                        //Save,这里是save时间，之前一直save 温度和功率了，时间应该简单点
-                        //将设置的时间减去当前的时间，然后通过公式计算出来，总共达到温度用去了多少时间
-                        //需要考虑一种情况就是设置段位的运行时间始终没有达到设置的温度，存储什么数据呢？
-                        //
                          flag_00 = 0;
+                         reach_time = 60*arr_setting[0][1].toInt() + arr_setting[0][2].toInt() - temp11*60 - temp11;
+                         arr_setting[0][4] = QSting::number(reach_time/60);
+                         arr_setting[0][5] = QSting::number(reach_time%60);
+
+                         Save_config_file("bilang.cfg");
                      }
                     break;
         case 2:
@@ -265,6 +280,8 @@ void Running_1::onTimerOut()
                      if(temp_power.toInt()>=arr_setting[1][0].toInt())
                      {
                         //Save
+                         flag_10 = 0;
+                         Save_config_file("bilang.cfg");
                      }
                     break;
         case 3:
@@ -292,6 +309,8 @@ void Running_1::onTimerOut()
                      if(temp_power.toInt()>=arr_setting[2][0].toInt())
                      {
                         //Save
+                         flag_20 = 0;
+                         Save_config_file("bilang.cfg");
                      }
                     break;
         case 4:
@@ -319,6 +338,8 @@ void Running_1::onTimerOut()
                      if(temp_power.toInt()>=arr_setting[3][0].toInt())
                      {
                         //Save
+                         flag_30 = 0;
+                         Save_config_file("bilang.cfg");
                      }
                     break;
         case 5:
@@ -345,6 +366,8 @@ void Running_1::onTimerOut()
                      if(temp_power.toInt()>=arr_setting[4][0].toInt())
                      {
                         //Save
+                         flag_40 = 0;
+                         Save_config_file("bilang.cfg");
                      }
                     break;
     default:
