@@ -61,6 +61,11 @@ void Running_2::Page_init()
     ui->lcdNumber_5->setMode(QLCDNumber::Dec);
     ui->lcdNumber_6->setMode(QLCDNumber::Dec);
     ui->lcdNumber_7->setMode(QLCDNumber::Dec);
+    flag_00 = 1;
+    flag_10 = 1;
+    flag_20 = 1;
+    flag_30 = 1;
+    flag_40 = 1;
 
 
 }
@@ -201,6 +206,7 @@ bool Running_2::send_serial(QString str)
 
 void Running_2::onTimerOut()
 {
+    int reach_time=0;
     ui->lcdNumber_3->display(duanwei);
    switch (duanwei)
    {
@@ -227,6 +233,14 @@ void Running_2::onTimerOut()
 
                        }
                    }
+                   if((temp_power.toInt()>=arr_setting[0][0].toInt())&&flag_00)
+                   {
+                       flag_00 = 0;
+                       reach_time = 60*arr_setting[0][1].toInt() + arr_setting[0][2].toInt() - temp11*60 - temp12;
+                       arr_setting[0][4] = QString::number(reach_time/60);
+                       arr_setting[0][5] = QString::number(reach_time%60);
+                       Save_config_file("bilang.cfg");
+                   }
                    break;
        case 2:
                    if(temp22!=0){
@@ -249,6 +263,14 @@ void Running_2::onTimerOut()
                            //send duanwei 3 cmd
                            on_pushButton_clicked();
                        }
+                   }
+                   if((temp_power.toInt()>=arr_setting[1][0].toInt())&&flag_10)
+                   {
+                       flag_10 = 0;
+                       reach_time = 60*arr_setting[1][1].toInt() + arr_setting[1][2].toInt() - temp21*60 - temp22;
+                       arr_setting[1][4] = QString::number(reach_time/60);
+                       arr_setting[1][5] = QString::number(reach_time%60);
+                       Save_config_file("bilang.cfg");
                    }
                    break;
        case 3:
@@ -273,6 +295,14 @@ void Running_2::onTimerOut()
                            on_pushButton_clicked();
                        }
                    }
+                   if((temp_power.toInt()>=arr_setting[2][0].toInt())&&flag_20)
+                   {
+                       flag_20 = 0;
+                       reach_time = 60*arr_setting[2][1].toInt() + arr_setting[2][2].toInt() - temp31*60 - temp32;
+                       arr_setting[2][4] = QString::number(reach_time/60);
+                       arr_setting[2][5] = QString::number(reach_time%60);
+                       Save_config_file("bilang.cfg");
+                   }
                    break;
        case 4:
                    if(temp42!=0){
@@ -296,6 +326,14 @@ void Running_2::onTimerOut()
                            on_pushButton_clicked();
                        }
                    }
+                   if((temp_power.toInt()>=arr_setting[3][0].toInt())&&flag_30)
+                   {
+                       flag_30 = 0;
+                       reach_time = 60*arr_setting[3][1].toInt() + arr_setting[3][2].toInt() - temp41*60 - temp42;
+                       arr_setting[3][4] = QString::number(reach_time/60);
+                       arr_setting[3][5] = QString::number(reach_time%60);
+                       Save_config_file("bilang.cfg");
+                   }
                    break;
        case 5:
                    if(temp52!=0){
@@ -317,6 +355,14 @@ void Running_2::onTimerOut()
                            timer->stop();
                            qDebug()<<"Game over";
                        }
+                   }
+                   if((temp_power.toInt()>=arr_setting[4][0].toInt())&&flag_40)
+                   {
+                       flag_40 = 0;
+                       reach_time = 60*arr_setting[4][1].toInt() + arr_setting[4][2].toInt() - temp51*60 - temp52;
+                       arr_setting[4][4] = QString::number(reach_time/60);
+                       arr_setting[4][5] = QString::number(reach_time%60);
+                       Save_config_file("bilang.cfg");
                    }
                    break;
    default:
