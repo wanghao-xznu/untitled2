@@ -205,7 +205,7 @@ void Running_3::onTimerOut()
 
                        }
                    }
-                   if((temp_power.toInt()>=arr_setting[0][0].toInt())&&flag_00)
+                   if((temp_temperature.toInt()>=arr_setting[0][0].toInt())&&flag_00)
                    {
                        flag_00 = 0;
                        reach_time = 60*arr_setting[0][1].toInt() + arr_setting[0][2].toInt() - temp11*60 - temp12;
@@ -236,7 +236,7 @@ void Running_3::onTimerOut()
                            on_pushButton_clicked();
                        }
                    }
-                   if((temp_power.toInt()>=arr_setting[1][0].toInt())&&flag_10)
+                   if((temp_temperature.toInt()>=arr_setting[1][0].toInt())&&flag_10)
                    {
                        flag_10 = 0;
                        reach_time = 60*arr_setting[1][1].toInt() + arr_setting[1][2].toInt() - temp21*60 - temp22;
@@ -267,7 +267,7 @@ void Running_3::onTimerOut()
                            on_pushButton_clicked();
                        }
                    }
-                   if((temp_power.toInt()>=arr_setting[2][0].toInt())&&flag_20)
+                   if((temp_temperature.toInt()>=arr_setting[2][0].toInt())&&flag_20)
                    {
                        flag_20 = 0;
                        reach_time = 60*arr_setting[2][1].toInt() + arr_setting[2][2].toInt() - temp31*60 - temp32;
@@ -298,7 +298,7 @@ void Running_3::onTimerOut()
                            on_pushButton_clicked();
                        }
                    }
-                   if((temp_power.toInt()>=arr_setting[3][0].toInt())&&flag_30)
+                   if((temp_temperature.toInt()>=arr_setting[3][0].toInt())&&flag_30)
                    {
                        flag_30 = 0;
                        reach_time = 60*arr_setting[3][1].toInt() + arr_setting[3][2].toInt() - temp41*60 - temp42;
@@ -328,7 +328,7 @@ void Running_3::onTimerOut()
                            qDebug()<<"Game over";
                        }
                    }
-                   if((temp_power.toInt()>=arr_setting[4][0].toInt())&&flag_40)
+                   if((temp_temperature.toInt()>=arr_setting[4][0].toInt())&&flag_40)
                    {
                        flag_40 = 0;
                        reach_time = 60*arr_setting[4][1].toInt() + arr_setting[4][2].toInt() - temp51*60 - temp52;
