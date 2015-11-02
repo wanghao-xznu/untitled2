@@ -190,22 +190,10 @@ void Setting_1::on_pushButton_17_clicked()//4
 
 void Setting_1::on_pushButton_18_clicked()//5
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_18->setText(ret);
-    arr_setting[0][4]=ret;
 }
 
 void Setting_1::on_pushButton_19_clicked()//6
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_19->setText(ret);
-    arr_setting[0][5]=ret;
 }
 
 void Setting_1::on_pushButton_3_clicked()//7
@@ -287,22 +275,10 @@ void Setting_1::on_pushButton_20_clicked()//10
 
 void Setting_1::on_pushButton_24_clicked()//11
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_24->setText(ret);
-    arr_setting[1][4]=ret;
 }
 
 void Setting_1::on_pushButton_25_clicked()//12
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_25->setText(ret);
-    arr_setting[1][5]=ret;
 }
 
 void Setting_1::on_pushButton_4_clicked()//13
@@ -384,22 +360,10 @@ void Setting_1::on_pushButton_21_clicked()//16
 
 void Setting_1::on_pushButton_26_clicked()//17
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_26->setText(ret);
-    arr_setting[2][4]=ret;
 }
 
 void Setting_1::on_pushButton_27_clicked()//18
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_27->setText(ret);
-    arr_setting[2][5]=ret;
 }
 
 void Setting_1::on_pushButton_5_clicked()//19
@@ -481,22 +445,10 @@ void Setting_1::on_pushButton_22_clicked()//22
 
 void Setting_1::on_pushButton_28_clicked()//23
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_28->setText(ret);
-    arr_setting[3][4]=ret;
 }
 
 void Setting_1::on_pushButton_29_clicked()//24
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_29->setText(ret);
-    arr_setting[3][5]=ret;
 }
 
 void Setting_1::on_pushButton_6_clicked()//25
@@ -578,22 +530,10 @@ void Setting_1::on_pushButton_23_clicked()//28
 
 void Setting_1::on_pushButton_30_clicked()
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_30->setText(ret);
-    arr_setting[4][4]=ret;
 }
 
 void Setting_1::on_pushButton_31_clicked()
 {
-    NumKeyBoard numkeyboard;
-    //numkeyboard.show();
-    //numkeyboard.exec();
-    ret=numkeyboard.returnValue();
-    ui->pushButton_31->setText(ret);
-    arr_setting[4][5]=ret;
 }
 
 void Setting_1::on_pushButton_33_clicked() //back
