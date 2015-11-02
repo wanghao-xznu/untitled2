@@ -158,12 +158,12 @@ bool Running_3::send_serial(QString str)
                    current_power[1]=temper_and_power[2];
                    current_power[2]=temper_and_power[3];
                     current_power[3]='\0';
-                    QString temp_power = current_power;
+                     temp_power = current_power;
                      current_temperature[0]=temper_and_power[4];
                      current_temperature[1]=temper_and_power[5];
                      current_temperature[2]=temper_and_power[6];
                      current_temperature[3]='\0';
-                     QString temp_temperature = current_temperature;
+                     temp_temperature = current_temperature;
                      //qDebug()<<current_power;
 
                      //ui->lcdNumber_9->display(current_power);
