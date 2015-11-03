@@ -171,3 +171,18 @@ QString NumKeyBoard::returnValue()
     //return inputBuf;
     return ui->lineEdit->text();
 }//keyboard.cpp返回输入值
+
+void NumKeyBoard::on_pushButton_4_clicked()//clear == CLR
+{
+    ui->lineEdit->setText("0");
+}
+
+void NumKeyBoard::on_pushButton_7_clicked()//delete ==DEL
+{
+    QString text = ui->lineEdit->text();
+    text.chop(1);
+    if (text.isEmpty()) {
+        text = "0";
+    }
+    ui->lineEdit->setText(text);
+}
