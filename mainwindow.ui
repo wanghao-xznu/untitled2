@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(255, 255, 255);
+   <string notr="true">color: rgb(255, 255, 0);
 background-image:url(./background_bilang.jpg)
 </string>
   </property>
