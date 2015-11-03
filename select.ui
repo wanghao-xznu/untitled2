@@ -14,7 +14,8 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image:url(./background_bilang.jpg)</string>
+   <string notr="true">color: rgb(255, 255, 255);
+background-image:url(./background_bilang.jpg)</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
