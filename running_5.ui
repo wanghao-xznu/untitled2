@@ -53,10 +53,10 @@ background-color: rgb(0, 0, 255);</string>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>430</y>
-     <width>121</width>
-     <height>41</height>
+     <x>390</x>
+     <y>410</y>
+     <width>131</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
@@ -215,9 +215,9 @@ background-color: rgb(0, 0, 255);</string>
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>430</y>
+     <y>410</y>
      <width>121</width>
-     <height>41</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
@@ -408,9 +408,9 @@ background-color: rgb(0, 0, 255);</string>
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>430</y>
-     <width>121</width>
-     <height>41</height>
+     <y>410</y>
+     <width>131</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
