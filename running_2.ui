@@ -106,7 +106,7 @@ background-color: rgb(0, 0, 255);</string>
      <italic>true</italic>
      <bold>true</bold>
      <underline>false</underline>
-     <strikeout>true</strikeout>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="text">

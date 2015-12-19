@@ -221,6 +221,8 @@ void Running_1::onTimerOut()
     switch (duanwei)
     {
         case 1:
+                    ui->lcdNumber_2->display(arr_setting[0][1].toInt());
+                    ui->lcdNumber_7->display(arr_setting[0][2].toInt());
                     if(temp12!=0){
                         ui->lcdNumber_6->display(--temp12);
                         ui->lcdNumber->display(temp11);
@@ -254,6 +256,10 @@ void Running_1::onTimerOut()
                     }
                     break;
         case 2:
+        ui->lcdNumber_2->display(arr_setting[1][1].toInt());
+        ui->lcdNumber_7->display(arr_setting[1][2].toInt());
+                    ui->lcdNumber_2->display(arr_setting[1][1].toInt());
+                    ui->lcdNumber_7->display(arr_setting[1][2].toInt());
                     if(temp22!=0){
                         ui->lcdNumber_6->display(--temp22);
                         ui->lcdNumber->display(temp21);
@@ -285,6 +291,10 @@ void Running_1::onTimerOut()
                     }
                     break;
         case 3:
+        ui->lcdNumber_2->display(arr_setting[2][1].toInt());
+        ui->lcdNumber_7->display(arr_setting[2][2].toInt());
+                     ui->lcdNumber_2->display(arr_setting[2][1].toInt());
+                     ui->lcdNumber_7->display(arr_setting[2][2].toInt());
                     if(temp32!=0){
                         ui->lcdNumber_6->display(--temp32);
                         ui->lcdNumber->display(temp31);
@@ -316,6 +326,10 @@ void Running_1::onTimerOut()
                     }
                     break;
         case 4:
+        ui->lcdNumber_2->display(arr_setting[3][1].toInt());
+        ui->lcdNumber_7->display(arr_setting[3][2].toInt());
+                    ui->lcdNumber_2->display(arr_setting[3][1].toInt());
+                    ui->lcdNumber_7->display(arr_setting[3][2].toInt());
                     if(temp42!=0){
                         ui->lcdNumber_6->display(--temp42);
                         ui->lcdNumber->display(temp41);
@@ -347,6 +361,10 @@ void Running_1::onTimerOut()
                     }
                     break;
         case 5:
+        ui->lcdNumber_2->display(arr_setting[4][1].toInt());
+        ui->lcdNumber_7->display(arr_setting[4][2].toInt());
+                    ui->lcdNumber_2->display(arr_setting[4][1].toInt());
+                    ui->lcdNumber_7->display(arr_setting[4][2].toInt());
                     if(temp52!=0){
                         ui->lcdNumber_6->display(--temp52);
                         ui->lcdNumber->display(temp51);
