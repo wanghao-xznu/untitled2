@@ -35,14 +35,14 @@ void Running_5::Page_init()
     temp31=arr_setting[2][1].toInt();
     temp32=arr_setting[2][2].toInt();
     temp33=arr_setting[2][3].toInt();
-    temp41=arr_setting[3][0].toInt();
+    temp40=arr_setting[3][0].toInt();
     temp41=arr_setting[3][1].toInt();
     temp42=arr_setting[3][2].toInt();
-    temp42=arr_setting[3][3].toInt();
-    temp51=arr_setting[4][0].toInt();
+    temp43=arr_setting[3][3].toInt();
+    temp50=arr_setting[4][0].toInt();
     temp51=arr_setting[4][1].toInt();
     temp52=arr_setting[4][2].toInt();
-    temp52=arr_setting[4][3].toInt();
+    temp53=arr_setting[4][3].toInt();
     duanwei=1;
     receive_count=10;
     ui->lcdNumber->display(temp11);
