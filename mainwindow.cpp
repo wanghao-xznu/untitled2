@@ -3,6 +3,7 @@
 #include "select.h"
 
 #include "bilang.h"
+#include <QDebug>
 MainWindow *g_mianwindow=NULL;
 
 
