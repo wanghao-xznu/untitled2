@@ -335,6 +335,7 @@ void Running_5::onTimerOut()
                            //duanwei++;
                            //send stop CMD
                            timer->stop();
+                           send_serial("STP");
                            qDebug()<<"Game over";
                        }
                    }
